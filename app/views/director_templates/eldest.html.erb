@@ -1,0 +1,9 @@
+<h1>Eldest director</h1>
+
+
+  <% matching_records = Director.where({:dob => @eldest_dob })%>
+  <% eldest_director = matching_records.at(0) %>
+<p>
+    The eldest director in our dataset right now is <%= eldest_director.name %>, 
+    born on <%= @eldest_dob.strftime("%B") %> <%= @eldest_dob.day %>, <%= @eldest_dob.year %>.
+</p>

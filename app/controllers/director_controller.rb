@@ -11,9 +11,11 @@ class DirectorController < ApplicationController
     render({ :template => "director_templates/detail"})
   end
   def youngestpage
+    @youngest_dob = Director.maximum(:dob)
     render({ :template => "director_templates/youngest"})
   end
   def eldestpage
+    @eldest_dob = Director.minimum(:dob)
     render({ :template => "director_templates/eldest"})
   end
 end
